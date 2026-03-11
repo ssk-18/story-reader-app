@@ -43,6 +43,8 @@ background:#0056b3;
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
+gap:50px;
+margin-top:40px;
 }
 
 
@@ -55,14 +57,12 @@ position:relative;
 width:220px;
 height:300px;
 
-margin:30px;
-
 perspective:2000px;
 
 }
 
 
-/* BOOK COVER */
+/* COVER */
 
 .book-cover{
 
@@ -71,32 +71,25 @@ position:absolute;
 width:100%;
 height:100%;
 
-border-radius:10px;
-
 background-size:cover;
 background-position:center;
+
+border-radius:6px;
 
 transform-origin:left;
 
 transition:transform 1s;
 
-box-shadow:0 15px 25px rgba(0,0,0,0.4);
+z-index:5;
 
-display:flex;
-align-items:flex-end;
-justify-content:center;
-
-color:white;
-font-weight:bold;
-
-padding:10px;
+box-shadow:0 20px 25px rgba(0,0,0,0.3);
 
 }
 
 
 /* PAGES */
 
-.book-page{
+.page{
 
 position:absolute;
 
@@ -105,25 +98,23 @@ height:100%;
 
 background:white;
 
-border-radius:10px;
-
-box-shadow:0 5px 10px rgba(0,0,0,0.2);
+border-radius:6px;
 
 transform-origin:left;
 
 transition:transform 1s;
 
+box-shadow:0 10px 15px rgba(0,0,0,0.2);
+
 }
 
-
-/* PAGE STACK */
-
-.page1{z-index:1}
-.page2{z-index:2}
-.page3{z-index:3}
+.page1{z-index:4;}
+.page2{z-index:3;}
+.page3{z-index:2;}
+.page4{z-index:1;}
 
 
-/* BOOK CONTENT */
+/* STORY PAGE */
 
 .book-content{
 
@@ -134,36 +125,41 @@ height:100%;
 
 background:white;
 
-border-radius:10px;
+border-radius:6px;
 
 padding:20px;
-
-box-shadow:0 5px 10px rgba(0,0,0,0.2);
 
 z-index:0;
 
 display:flex;
 flex-direction:column;
 justify-content:center;
+align-items:center;
+
+box-shadow:0 10px 15px rgba(0,0,0,0.2);
 
 }
 
 
-/* HOVER ANIMATION */
+/* BOOK OPEN ANIMATION */
 
 .book:hover .book-cover{
-transform:rotateY(-150deg);
+transform:rotateY(-160deg);
 }
 
 .book:hover .page1{
-transform:rotateY(-140deg);
+transform:rotateY(-150deg);
 }
 
 .book:hover .page2{
-transform:rotateY(-130deg);
+transform:rotateY(-140deg);
 }
 
 .book:hover .page3{
+transform:rotateY(-130deg);
+}
+
+.book:hover .page4{
 transform:rotateY(-120deg);
 }
 
