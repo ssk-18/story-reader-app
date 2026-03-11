@@ -1,7 +1,7 @@
 body{
 
 font-family:Arial;
-background:#f2f2f2;
+background:#f4f4f4;
 margin:0;
 text-align:center;
 
@@ -68,65 +68,80 @@ justify-content:center;
 }
 
 
-/* FLIP CARD */
+/* BOOK CARD */
 
-.flip-card{
-
-width:260px;
-height:200px;
-perspective:1000px;
-margin:20px;
-
-}
-
-.flip-inner{
+.book{
 
 position:relative;
-width:100%;
-height:100%;
-transition:transform 0.8s;
-transform-style:preserve-3d;
+
+width:200px;
+height:260px;
+
+margin:20px;
+
+perspective:1000px;
 
 }
 
-.flip-card:hover .flip-inner{
-
-transform:rotateY(180deg);
-
-}
-
-.flip-front,
-.flip-back{
+.book-cover{
 
 position:absolute;
+
 width:100%;
 height:100%;
-backface-visibility:hidden;
 
-border-radius:12px;
-padding:20px;
+background:#8B4513;
+
+color:white;
+
+border-radius:8px;
 
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 
-box-shadow:0 6px 15px rgba(0,0,0,0.2);
+font-size:30px;
+
+transform-origin:left;
+
+transition:transform 0.7s;
+
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
 
 }
 
-.flip-front{
+.book-cover h3{
+
+font-size:18px;
+margin-top:10px;
+
+}
+
+.book-content{
+
+position:absolute;
+
+width:100%;
+height:100%;
 
 background:white;
 
+border-radius:8px;
+
+padding:15px;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+
 }
 
-.flip-back{
+.book:hover .book-cover{
 
-background:#007BFF;
-color:white;
-
-transform:rotateY(180deg);
+transform:rotateY(-150deg);
 
 }
 
@@ -147,7 +162,7 @@ color:white;
 
 }
 
-.dark .flip-front{
+.dark .book-content{
 
 background:#1e1e1e;
 
