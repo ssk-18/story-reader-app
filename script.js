@@ -1,4 +1,4 @@
-const stories = [
+const stories=[
 
 {
 title:"Love in the Rain",
@@ -8,10 +8,10 @@ content:"Arjun meets Ananya during a rainy evening and their love story begins."
 },
 
 {
-title:"The Haunted Mansion",
+title:"Haunted Mansion",
 category:"horror",
 image:"https://images.unsplash.com/photo-1505843513577-22bb7d21e455",
-content:"Rahul enters an abandoned mansion where whispers echo through the dark halls."
+content:"Rahul enters a mansion where strange whispers echo in the dark halls."
 },
 
 {
@@ -30,35 +30,30 @@ content:"Success belongs to those who never stop trying."
 
 ];
 
-let currentStories = stories;
+let currentStories=stories;
 
 
 
 function displayStories(list){
 
-const container = document.getElementById("storyContainer");
+const container=document.getElementById("storyContainer");
 
 container.innerHTML="";
 
 
-list.forEach(story => {
+list.forEach(story=>{
 
-const div = document.createElement("div");
+const div=document.createElement("div");
 
-div.innerHTML = `
+div.innerHTML=`
 
 <div class="book">
 
-<div class="book-cover"
-style="background-image:url('${story.image}')">
-</div>
+<div class="cover" style="background-image:url('${story.image}')"></div>
 
-<div class="page page1"></div>
-<div class="page page2"></div>
-<div class="page page3"></div>
-<div class="page page4"></div>
+<div class="pages"></div>
 
-<div class="book-content">
+<div class="content">
 
 <p>${story.content}</p>
 
