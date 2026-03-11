@@ -1,4 +1,4 @@
-const stories=[
+const stories = [
 
 {
 title:"Love in the Rain",
@@ -30,40 +30,41 @@ content:"Success belongs to those who never stop trying."
 
 ];
 
-let currentStories=stories;
+let currentStories = stories;
 
 
 
 function displayStories(list){
 
-const container=document.getElementById("storyContainer");
+const container = document.getElementById("storyContainer");
 
 container.innerHTML="";
 
 
-list.forEach(story=>{
+list.forEach(story => {
 
-const div=document.createElement("div");
+const div = document.createElement("div");
 
-div.innerHTML=`
+div.innerHTML = `
 
 <div class="book">
 
-<div class="book-cover" style="background-image:url('${story.image}')">
-
-${story.title}
-
+<div class="book-cover"
+style="background-image:url('${story.image}')">
 </div>
 
-<div class="book-page page1"></div>
-<div class="book-page page2"></div>
-<div class="book-page page3"></div>
+<div class="page page1"></div>
+<div class="page page2"></div>
+<div class="page page3"></div>
+<div class="page page4"></div>
 
 <div class="book-content">
 
 <p>${story.content}</p>
 
-<button onclick="bookmarkStory('${story.title}')">Bookmark</button>
+<button onclick="bookmarkStory('${story.title}')">
+Bookmark
+</button>
 
 </div>
 
