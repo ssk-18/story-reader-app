@@ -1,66 +1,69 @@
-const stories = [
-
-{
-title:"The Haunted House",
-category:"horror",
-content:"Rahul enters an abandoned mansion where strange whispers echo through the halls."
-},
+const stories=[
 
 {
 title:"Love in the Rain",
 category:"romance",
-content:"Arjun meets Ananya on a rainy evening and their story begins with a shared umbrella."
+image:"https://images.unsplash.com/photo-1494976388531-d1058494cdd8",
+content:"Arjun meets Ananya during a rainy evening and their love story begins."
+},
+
+{
+title:"The Haunted Mansion",
+category:"horror",
+image:"https://images.unsplash.com/photo-1505843513577-22bb7d21e455",
+content:"Rahul enters an abandoned mansion where whispers echo through the dark halls."
 },
 
 {
 title:"Journey to Mars",
 category:"scifi",
-content:"In the year 2050, humans build the first colony on Mars."
+image:"https://images.unsplash.com/photo-1446776811953-b23d57bd21aa",
+content:"In 2050 humans build their first colony on Mars."
 },
 
 {
 title:"Never Give Up",
 category:"motivation",
-content:"Success comes to those who keep trying even after failure."
+image:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+content:"Success belongs to those who never stop trying."
 }
 
 ];
 
-
-let currentStories = stories;
+let currentStories=stories;
 
 
 
 function displayStories(list){
 
-const container = document.getElementById("storyContainer");
+const container=document.getElementById("storyContainer");
 
-container.innerHTML = "";
+container.innerHTML="";
 
 
-list.forEach(story => {
+list.forEach(story=>{
 
-const div = document.createElement("div");
+const div=document.createElement("div");
 
-div.innerHTML = `
+div.innerHTML=`
 
 <div class="book">
 
-<div class="book-cover">
+<div class="book-cover" style="background-image:url('${story.image}')">
 
-📖
-
-<h3>${story.title}</h3>
+${story.title}
 
 </div>
+
+<div class="book-page page1"></div>
+<div class="book-page page2"></div>
+<div class="book-page page3"></div>
 
 <div class="book-content">
 
 <p>${story.content}</p>
 
-<button class="bookmark" onclick="bookmarkStory('${story.title}')">
-Bookmark
-</button>
+<button onclick="bookmarkStory('${story.title}')">Bookmark</button>
 
 </div>
 
@@ -79,15 +82,10 @@ container.appendChild(div);
 function filterStories(category){
 
 if(category==="all"){
-
 currentStories=stories;
-
 }
-
 else{
-
 currentStories=stories.filter(s=>s.category===category);
-
 }
 
 displayStories(currentStories);
@@ -98,10 +96,7 @@ displayStories(currentStories);
 
 function searchStories(){
 
-const keyword=document
-.getElementById("searchBar")
-.value
-.toLowerCase();
+const keyword=document.getElementById("searchBar").value.toLowerCase();
 
 const filtered=currentStories.filter(story =>
 story.title.toLowerCase().includes(keyword)
@@ -115,19 +110,15 @@ displayStories(filtered);
 
 function bookmarkStory(title){
 
-let bookmarks=
-JSON.parse(localStorage.getItem("bookmarks")) || [];
+let bookmarks=JSON.parse(localStorage.getItem("bookmarks"))||[];
 
 if(!bookmarks.includes(title)){
 
 bookmarks.push(title);
 
-localStorage.setItem(
-"bookmarks",
-JSON.stringify(bookmarks)
-);
+localStorage.setItem("bookmarks",JSON.stringify(bookmarks));
 
-alert("Story Bookmarked!");
+alert("Bookmarked!");
 
 }
 
