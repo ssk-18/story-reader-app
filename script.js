@@ -3,25 +3,25 @@ const stories = [
 {
 title:"The Haunted House",
 category:"horror",
-content:"Rahul enters a haunted mansion where strange sounds echo through the dark halls."
+content:"Rahul enters an abandoned mansion where strange whispers echo through the halls."
 },
 
 {
 title:"Love in the Rain",
 category:"romance",
-content:"Arjun meets Ananya during a rainy evening and their love story begins."
+content:"Arjun meets Ananya on a rainy evening and their story begins with a shared umbrella."
 },
 
 {
 title:"Journey to Mars",
 category:"scifi",
-content:"In 2050 humanity creates its first colony on Mars."
+content:"In the year 2050, humans build the first colony on Mars."
 },
 
 {
 title:"Never Give Up",
 category:"motivation",
-content:"Success comes to those who continue trying despite failure."
+content:"Success comes to those who keep trying even after failure."
 }
 
 ];
@@ -33,42 +33,34 @@ let currentStories = stories;
 
 function displayStories(list){
 
-const container=document.getElementById("storyContainer");
+const container = document.getElementById("storyContainer");
 
-container.innerHTML="";
-
-
-list.forEach(story=>{
-
-const div=document.createElement("div");
-
-div.className="story";
+container.innerHTML = "";
 
 
-div.innerHTML=`
+list.forEach(story => {
 
-<div class="flip-card">
+const div = document.createElement("div");
 
-<div class="flip-inner">
+div.innerHTML = `
 
-<div class="flip-front">
+<div class="book">
+
+<div class="book-cover">
+
+📖
 
 <h3>${story.title}</h3>
 
-<p>${story.category}</p>
-
 </div>
 
-
-<div class="flip-back">
+<div class="book-content">
 
 <p>${story.content}</p>
 
 <button class="bookmark" onclick="bookmarkStory('${story.title}')">
 Bookmark
 </button>
-
-</div>
 
 </div>
 
@@ -111,7 +103,6 @@ const keyword=document
 .value
 .toLowerCase();
 
-
 const filtered=currentStories.filter(story =>
 story.title.toLowerCase().includes(keyword)
 );
@@ -126,7 +117,6 @@ function bookmarkStory(title){
 
 let bookmarks=
 JSON.parse(localStorage.getItem("bookmarks")) || [];
-
 
 if(!bookmarks.includes(title)){
 
