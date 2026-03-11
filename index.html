@@ -3,42 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>StoryVerse</title>
-
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-<header>
-
 <h1>📚 StoryVerse</h1>
 
-<button id="darkToggle">🌙</button>
-
-</header>
-
-
-<input
-type="text"
-id="searchBar"
-placeholder="Search stories..."
-onkeyup="searchStories()"
-/>
-
-
 <div class="categories">
-
 <button onclick="filterStories('all')">All</button>
 <button onclick="filterStories('horror')">Horror</button>
 <button onclick="filterStories('romance')">Romance</button>
 <button onclick="filterStories('scifi')">Sci-Fi</button>
 <button onclick="filterStories('motivation')">Motivation</button>
-
 </div>
-
 
 <div id="storyContainer" class="stories"></div>
 
